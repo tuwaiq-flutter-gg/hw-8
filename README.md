@@ -1,12 +1,12 @@
 # Homework 8
 
-1.Create a class named `car` with four variable properties: `model`, `yeaOfPrediction`, `Company` and `color`. Add at least two methods to this class from your own choose. 
+1.Create a class named `vehicle` with four variable properties: `model`, `yeaOfPrediction`, `Company` and `color`. Add at least two methods to this class from your own choose. 
 
-2.Build a default constructor called `defaultCar`, that prints the statement "This is the default constructor". test it in the main then let the default constructor as a comment in order to apply the following questions.
+2.Build a default constructor called `defaultVehicle`, that prints the statement "This is the default constructor". test it in the main then let the default constructor as a comment in order to apply the following questions.
 
-3.Build a parameterized constructor  called `car`, that has the same parameters above from the `Car` class. call it in the main function to test it.
+3.Build a parameterized constructor  called `vehicle`, that has the same parameters above from the `vehicle` class. call it in the main function to test it.
 
-4.Build a custom constructor called `customCar`,  that takes only two from the parameter in the class `car`. Call `customCar()` and explain the result.
+4.Build a custom constructor called `customVehicle`,  that takes only two from the parameter in the class `vehicle`. Call `customVehicle()` and explain the result.
 
 #### The following exercises are based on the spaceship app from yesterday's assignment.
 
