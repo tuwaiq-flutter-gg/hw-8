@@ -1,0 +1,180 @@
+void main() {
+
+
+  
+  
+  
+
+
+
+Vehicle vehicle1 = Vehicle(company: "Renault", color: "Dark Green", yeaOfProduction:2015  );
+
+vehicle1.carMethod();
+
+
+Spaceship falcon= Spaceship(name: "falcon");
+
+Fighter destroyer=Fighter( 
+remainingFirePower: 10,
+name: "Destroyer",
+weapon: "Laser");
+
+print(destroyer.position);
+
+destroyer.moveRight(num: 1);
+
+print(destroyer.position);
+
+print("we can not print weapon of Falcon because the variable weapon is declared on the subclass Fighter not the superclass which is Spaceship ");
+
+
+for(var i=0;i<11;i++){
+print(destroyer.remainingFirePower);
+destroyer.fire();
+}
+
+ShieldedShip defender=ShieldedShip(name: "Defender",weapon: "cannon");
+defender.moveRight(num: 1);
+print(defender.position);
+defender.fire();
+print(defender.remainingFirePower);
+defender.wasHit();
+print("health :${defender.health}  sheild: ${defender.shieldStrength}");
+
+}
+
+  
+
+
+
+//1.Create a class named `Vehicle` with four variable properties:
+// `model`, `yeaOfProduction`, `company` and `color`. 
+//Add at least two methods to this class from your own choose. 
+
+class Vehicle {
+  String? color;
+  String? company;
+  int? yeaOfProduction;
+//2.Build a default constructor called `defaultVehicle`, that prints 
+//the statement "This is the default constructor". test it in the main then
+// let the default constructor as a comment in order to apply the following questions.
+
+
+ //3.Build a parameterized constructor  called `vehicle`, that has the same parameters 
+  //above from the `vehicle` class. call it in the main function to test it.
+  //4.Build a custom constructor called `customVehicle`,  that takes only two from the
+  // parameter in the class `vehicle`. Call `customVehicle()` and explain the result.
+
+
+
+  Vehicle({ this.company, this.yeaOfProduction , this.color });
+
+    carMethod(){
+    print("$Vehicle goes fast");
+    }
+
+    stylish(){
+      print("$Vehicle is stylish");
+
+    }
+Vehicle.defaultVehicle () {
+    print("is constructor");
+}
+
+
+
+    Vehicle.customVehicle({this.company, this.color, this.yeaOfProduction}) {
+    print("My car make is $company and its color is $color and its a $yeaOfProduction model ");
+  }
+
+    
+  
+    
+  }
+
+
+
+
+ 
+
+
+
+class Spaceship{
+
+  String? name="";
+  int? health=0,position=0;
+
+  Spaceship({this.name, });
+
+  moveRight({int? num}){
+  this.position=this.position!+num!;
+}
+
+ moveLeft({int? num}){
+  this.position=(this.position!-num!);
+
+  }
+
+wasHit(){
+
+
+  this.health=this.health!-5;
+
+  if(this.health!<=0){
+
+    print("Sorry, your ship was hit one too many times. Do you want to play again?");
+
+    }
+
+}
+
+
+}
+//5.Define a new class `Fighter` that inherits from `Spaceship`. 
+  //Add a variable property `weapon` that defaults to an empty string and a variable property 
+  //`remainingFirePower` that defaults to 5.
+class Fighter extends Spaceship{
+  
+
+  String? weapon="";
+  int? remainingFirePower=5;
+
+
+Fighter({this.remainingFirePower,this.weapon,super.name}){
+  if(this.remainingFirePower==null){
+    this.remainingFirePower=5;
+
+  }
+}
+
+
+
+fire(){
+ if(this.remainingFirePower!>0){
+
+   this.remainingFirePower=this.remainingFirePower!-1;
+
+ } 
+ else{
+   print("You have no more fire power.");
+ }
+}
+
+}
+
+
+class ShieldedShip extends Fighter{
+
+
+int? shieldStrength=25;
+
+ShieldedShip({super.name,super.weapon});
+
+@override
+  wasHit() {
+   if(this.shieldStrength!>0){
+     shieldStrength=shieldStrength!-5;
+   }
+   else{super.wasHit(); }
+  }
+ }
