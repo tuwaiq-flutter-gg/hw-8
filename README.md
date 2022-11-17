@@ -1,3 +1,4 @@
+
 # Homework 8
 
 1.Create a class named `vehicle` with four variable properties: `model`, `yeaOfPrediction`, `Company` and `color`. Add at least two methods to this class from your own choose. 
@@ -23,5 +24,4 @@
 10.Go back to your declaration of `ShieldedShip` and override `wasHit()`. In the body of the method, check to see if `shieldStrength` is greater than 0. If it is, decrement `shieldStrength` by 5. Otherwise, decrement `health` by 5. Call `wasHit()` on defender and print `shieldStrength` and `health`.
 
 11.When `shieldStrength` is 0, all `wasHit()` does is decrement health by 5. That's exactly what the implementation of `wasHit()` on Spaceship does! Instead of rewriting that, you can call through to the superclass implementation of `wasHit()`. Go back to your implementation of `wasHit()` on `ShieldedShip` and remove the code where you decrement `health` by 5 and replace it with a call to the superclass's implementation of the method. Call `wasHit()` on defender, then print `shieldStrength` and `health`.
-
 
